@@ -1,3 +1,0 @@
-﻿  main.c
-C:\Users\Anderson\Documents\icg\01_hello_world_gl\old_opengl\main.c(57,11): warning C4013: 'atexit' indefinido; assumindo extern retornando int
-  Atividade_01.vcxproj -> C:\Users\Anderson\Documents\CG\Atividade_01\Debug\Atividade_01.exe
