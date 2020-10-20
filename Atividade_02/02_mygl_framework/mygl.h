@@ -13,17 +13,33 @@ void CloseMyGl(void); // Desaloca a memória do framebuffer
 // Declaração da função que chamará as funções implementadas pelo aluno
 void MyGlDraw(void);
 
-typedef struct 
-{
-    int x;
-    int y;
-    int RGBA[4];
-}Pixel;
-
 //
 // >>> Caro aluno: declare aqui as funções que você implementar <<<
 //
 
+typedef struct 
+{
+    int x;
+    int y;
+}Pixel;
+
+typedef struct 
+{
+   float red;
+   float green; 
+   float blue;
+   float alpha; //transparente
+} RGBA;
+
+typedef struct 
+{
+    Pixel pi; 
+    Pixel pf;
+}Linha;
+
 int posicaoPixel(int x, int y);
-void putPixel(Pixel pixel); 
+int sinal (int valor);
+void putPixel(int x, int y, RGBA color); 
+void drawLine (Pixel pi, Pixel pf, RGBA color1, RGBA color2 );
+void drawTriangle(Pixel p1, Pixel p2, Pixel p3);
 #endif  // MYGL_H
