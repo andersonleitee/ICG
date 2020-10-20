@@ -1,6 +1,7 @@
 # Atividade Prática 2 - Rasterizando Linhas
 
-<p>A atividade proposta tem como principal objetivo realizar a implementação de algorítmos para rasterização de pontos e linhas utilizando um framework disponibilizado no <a href="https://github.com/capagot/icg/tree/master/mygl_framework">repositório</a> do professor, que simula o aesso direto à memória de vídeo. Além de rasterizar pontos e linhas a atividade também propõe que seja rasterizado um triângulo utilizando a função criada para rasterizar linhas, de modo que suas arestas sejam construídas por meio da interpolação linear das cores, o que dar um toque degradê na coloração durante toda a sua extensão. </p>
+<p>A atividade proposta tem como principal objetivo realizar a implementação de algorítmos para rasterização de pontos e linhas utilizando um framework disponibilizado no <a href="https://github.com/capagot/icg/tree/master/mygl_framework">repositório</a> do professor, que simula o acesso direto à memória de vídeo. Além de rasterizar pontos e linhas a atividade também propõe que seja rasterizado um triângulo utilizando a função criada para rasterizar linhas, de modo que suas arestas sejam construídas por meio da interpolação linear das cores, o que dar um toque degradê na coloração durante toda a sua extensão. </p>
+
 
 <p>.</p>
 
