@@ -13,9 +13,17 @@ void CloseMyGl(void); // Desaloca a memória do framebuffer
 // Declaração da função que chamará as funções implementadas pelo aluno
 void MyGlDraw(void);
 
+typedef struct 
+{
+    int x;
+    int y;
+    int RGBA[4];
+}Pixel;
+
 //
 // >>> Caro aluno: declare aqui as funções que você implementar <<<
 //
 
-void putPixel(void);
+int posicaoPixel(int x, int y);
+void putPixel(Pixel pixel); 
 #endif  // MYGL_H

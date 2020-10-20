@@ -26,7 +26,7 @@ void CloseMyGl(void) {
 // >>> Caro aluno: defina aqui as funções que você implementar <<<
 //
 
-int posicaoPixel(int x, int y){
+int pixelPosition(int x, int y){
     int linha = ((y*4)*IMAGE_WIDTH);
     int coluna = (x*4);
     int posicao = linha + coluna;
@@ -34,33 +34,61 @@ int posicaoPixel(int x, int y){
     return posicao;
 }
 
-void putPixel(void){
+void putPixel(Pixel pixel){
 
-// Escreve um pixel vermelho 
- fb_ptr[posicaoPixel(400,450)+0] = 255;
- fb_ptr[posicaoPixel(400,450)+1] = 0;
- fb_ptr[posicaoPixel(400,450)+2] = 0;
- fb_ptr[posicaoPixel(400,450)+3] = 255;
+if((pixel.x>=0 && pixel.x<IMAGE_HEIGHT) && (pixel.y>=0 && pixel.y<IMAGE_WIDTH)){
 
-// Escreve um pixel verde 
-fb_ptr[posicaoPixel(320,320)+0] = 0;
-fb_ptr[posicaoPixel(320,320)+1] = 255;
-fb_ptr[posicaoPixel(320,320)+2] = 0;
-fb_ptr[posicaoPixel(320,320)+3] = 255;
-
-// Escreve um pixel azul
-fb_ptr[posicaoPixel(157,200)+0] = 0;
-fb_ptr[posicaoPixel(157,200)+1] = 0;
-fb_ptr[posicaoPixel(157,200)+2] = 255;
-fb_ptr[posicaoPixel(157,200)+3] = 255;
+    for (int i = 0; i < 4; i++){
+        fb_ptr[pixelPosition(pixel.x, pixel.y)+i] = pixel.RGBA[i];
+    }
+}
 
 }
 
+// void drawLine(Pixel pi, Pixel pf){
+//    double  dx, dy, D, inc_L , inc_NE;
+//    int x, y;
+
+//    dx = pf.x - pi.x;
+//    dy = pf.y - pi.y;
+//    D = 2*dy - dx;
+
+//    inc_NE = 2*(dy-dx);
+//    inc_L =  2*dy;
+
+//    x = pi.x;
+//    y = pi.y;
+
+//    putPixel(x, y, color)
+
+//    while (x<pf.x){
+//        if(D <= 0){
+//            D+= inc_L;
+//            x++;
+//        } else
+//        {
+//            D+= inc_NE;
+//            y++;
+//        }
+//         x++;  
+//        putPixel(x,y,color)
+//    }
+
+
+// }
 
 // Definição da função que chamará as funções implementadas pelo aluno
 void MyGlDraw(void) {
     //
     // >>> Caro aluno: chame aqui as funções que você implementou <<<
     //
-    putPixel();
+    Pixel p1;
+    p1.x = 500;
+    p1.y = 500;
+    p1.RGBA[0] = 255;
+    p1.RGBA[1] = 0;
+    p1.RGBA[2] = 0;
+    p1.RGBA[3] = 255;
+
+    putPixel(p1);
 }
