@@ -11,7 +11,7 @@ Como mencionado, para a implementação da rasterização de um ponto foi utiliz
 
 ### Resultado
 
-![] (https://github.com/andersonleitee/ICG/blob/master/Atividade_02/02_mygl_framework/prints/Pontos.png?raw=true) 
+![](https://github.com/andersonleitee/ICG/blob/master/Atividade_02/02_mygl_framework/prints/Pontos.png?raw=true) 
 |:--:| 
 | *Figura 1: Rasterização de dois pixels na tela. * |
 
@@ -39,6 +39,6 @@ A função utilizada para implentar a rasterização do triângulo foi a:`drawTr
 | *Figura 3: Rasterização de triângulo. drawTriangle(50,450,400,250,350,450)* |
 
 ## Referências
-- Com base nas aulas de rasterização do professor e <a href="https://github.com/capagot/icg/tree/master/mygl_framework">repositório</a>disponibilizado
+- Com base nas aulas de rasterização do professor e <a href="https://github.com/capagot/icg/tree/master/mygl_framework"> repositório</a>disponibilizado
 - <a href= "http://www.uobabylon.edu.iq/eprints/publication_2_22893_6215.pdf">Bresenham's Line Algorithm Lecture 3 / 3rd Class / 2016-2017 </a>
 - <a href="https://stackoverflow.com/">Comunidade StackOverflow</a>
