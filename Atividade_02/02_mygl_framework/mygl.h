@@ -19,27 +19,15 @@ void MyGlDraw(void);
 
 typedef struct 
 {
-    int x;
-    int y;
-}Pixel;
-
-typedef struct 
-{
    float red;
    float green; 
    float blue;
    float alpha; //transparente
 } RGBA;
 
-typedef struct 
-{
-    Pixel pi; 
-    Pixel pf;
-}Linha;
-
-int posicaoPixel(int x, int y);
+int pixelPosition(int x, int y);
 int sinal (int valor);
-void putPixel(int x, int y, RGBA color); 
-void drawLine (Pixel pi, Pixel pf, RGBA color1, RGBA color2 );
-void drawTriangle(Pixel p1, Pixel p2, Pixel p3);
+void putPixel(int x, int y, RGBA cor); 
+void drawLine (int x0, int y0, int x1, int y1, RGBA cor1, RGBA cor2 );
+void drawTriangle(int x0, int y0, int x1, int y1, int x2, int y2);
 #endif  // MYGL_H
