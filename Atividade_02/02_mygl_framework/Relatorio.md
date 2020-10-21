@@ -11,7 +11,7 @@ Como mencionado, para a implementação da rasterização de um ponto foi utiliz
 
 ### Resultado
 
-![] (https://github.com/andersonleitee/ICG/blob/master/Atividade_02/02_mygl_framework/prints/pixel.jpeg?raw=true) 
+![] (https://github.com/andersonleitee/ICG/blob/master/Atividade_02/02_mygl_framework/prints/Pontos.png?raw=true) 
 |:--:| 
 | *Figura 1: Rasterização de dois pixels na tela. * |
 
@@ -22,7 +22,7 @@ Para implementar a rasterização de linhas foi utilizada a função: `drawLine 
 ### Resultado
 
 
-![](https://github.com/andersonleitee/ICG/blob/master/Atividade_01/modern_opengl/prints/Figura%202.jpeg?raw=true) 
+![](https://github.com/andersonleitee/ICG/blob/master/Atividade_02/02_mygl_framework/prints/LInhaa.png?raw=true) 
 |:--:| 
 | *Figura 2: Rasterização de linha. drawLine(0, 0, 512, 512, red, green)* |
 
@@ -34,7 +34,7 @@ A função utilizada para implentar a rasterização do triângulo foi a:`drawTr
 
 
 
-![](https://github.com/andersonleitee/ICG/blob/master/Atividade_01/modern_opengl/prints/Figura%203.jpeg?raw=true) 
+![](https://github.com/andersonleitee/ICG/blob/master/Atividade_02/02_mygl_framework/prints/trangle.png?raw=true) 
 |:--:| 
 | *Figura 3: Rasterização de triângulo. drawTriangle(50,450,400,250,350,450)* |
 
