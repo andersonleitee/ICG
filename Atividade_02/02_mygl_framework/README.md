@@ -13,7 +13,7 @@ Como mencionado, para a implementação da rasterização de um ponto foi utiliz
 
 ![](https://github.com/andersonleitee/ICG/blob/@and/alterando-relatorio/Atividade_02/02_mygl_framework/prints/Pontos.png?raw=true) 
 |:--:| 
-| *Figura 1: Rasterização de dois pixels na tela. * |
+| *Figura 1: Rasterização de dois pixels na tela.* |
 
 ## Rasterização de linhas
 
