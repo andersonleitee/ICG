@@ -95,7 +95,7 @@ int flag = 0; // Flag para saber se a variação de y é maior que a de x
     putPixel(x, y, cor1); //pixel inicial
 
     inter1 = ((cor2.red) - (cor1.red))/dx; //Interpolação
-    inter3 = ((cor2.green)- (cor1.green))/dx;
+    inter2 = ((cor2.green)- (cor1.green))/dx;
     inter3 = ((cor2.blue)- (cor1.blue))/dx;
     inter4 = ((cor2.alpha) - (cor1.alpha))/dx;
 
