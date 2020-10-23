@@ -11,7 +11,7 @@ Como mencionado, para a implementação da rasterização de um ponto foi utiliz
 
 ### Resultado
 
-![] (https://github.com/andersonleitee/ICG/blob/master/Atividade_02/02_mygl_framework/prints/pixel.jpeg?raw=true) 
+![](https://github.com/andersonleitee/ICG/blob/master/Atividade_02/02_mygl_framework/prints/pixel.jpeg?raw=true) 
 |:--:| 
 | *Figura 1: Rasterização de dois pixels na tela. * |
 
