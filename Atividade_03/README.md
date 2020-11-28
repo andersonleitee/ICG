@@ -5,7 +5,7 @@
 
 ## Exercício 1: Escala
 
-Para esse exercício foi solicitado uma alteração na escala da imagem dos triângulos, conforme os dados cedidos para esta atividade, no qual a nova figura deverá conter os valores de coordenada (x,y,z)=(1/3,3/2,1) ou (0.3,1.5,1). Com isso, realizamos uma alteração na matriz Model do programa para que se obtivesse o resultado esperado. Segue a alteração da matriz abaixo onde sx = 0.3f, sy = 1.5f, sz = 1.0f.
+Para esse exercício foi solicitado uma alteração na escala da imagem dos triângulos, conforme os dados cedidos para esta atividade, no qual a nova figura deverá conter os valores de coordenada (x,y,z)=(1/3,3/2,1) ou (0.3,1.5,1). Com isso, realizamos uma alteração na matriz Model do programa para que se obtivesse o resultado esperado. Segue a alteração da matriz abaixo onde `sx = 0.3f, sy = 1.5f, sz = 1.0f`.
 
 ```C
   float model_array[16] = {   sx, 0.0f, 0.0f, 0.0f, 
@@ -17,9 +17,9 @@ Para esse exercício foi solicitado uma alteração na escala da imagem dos tri�
 
 ### Resultado
 
-![](link) 
+![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-1.jpg?raw=true) 
 |:--:| 
-| *Figura 1: * |
+| *Figura 1: ((x,y,z)=(1/3,3/2,1)) * |
 
 ## Referências
 
