@@ -42,7 +42,7 @@ Neste exercício foi demandado realizar uma translação no eixo x, na qual as c
 
 ## Exercício 3: Projeção Perspectiva
 
-Para este exercício foi requisitado alterar a matriz projeção (proj_array) baseada na matriz cedida no anunciado. Com isso, para que obtivéssemos o resultado conforme o solicitado foi alterado o valor do `d`, no qual `d = 1`, e derivou-se a matriz projeção abaixo:  
+Para este exercício foi requisitado alterar a matriz projeção (proj_array) baseada na matriz cedida no anunciado. Com isso, para que obtivéssemos o resultado conforme o solicitado foi alterado o valor do `d`, no qual `d = 0.5f`, e derivou-se a matriz projeção abaixo:  
 
 ```C
     float proj_array[16] = {1.0f, 0.0f, 0.0f, 0.0f, 
