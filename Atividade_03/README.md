@@ -8,10 +8,10 @@
 Para esse exercício foi solicitado uma alteração na escala da imagem dos triângulos, conforme os dados cedidos para esta atividade, no qual a nova figura deverá conter os valores de coordenada (x,y,z)=(1/3,3/2,1) ou (0.3,1.5,1). Com isso, realizamos uma alteração na matriz Model do programa para que se obtivesse o resultado esperado. Segue a alteração da matriz abaixo onde `sx = 0.3f, sy = 1.5f, sz = 1.0f`.
 
 ```C
-  float model_array[16] = {   sx, 0.0f, 0.0f, 0.0f, 
-                              0.0f, sy, 0.0f, 0.0f, 
-                              0.0f, 0.0f, sz, 0.0f, 
-                              0.0f, 0.0f, 0.0f, 1.0f};
+  float model_array[16] = { sx , 0.0f, 0.0f, 0.0f, 
+                           0.0f,  sy , 0.0f, 0.0f, 
+                           0.0f, 0.0f,  sz , 0.0f, 
+                           0.0f, 0.0f, 0.0f, 1.0f};
     glm::mat4 model_mat = glm::make_mat4(model_array); 
 ```
 
@@ -23,7 +23,7 @@ Para esse exercício foi solicitado uma alteração na escala da imagem dos tri�
 
 ## Exercício 2: Translação
 
-Neste exercício foi demandado realizar uma translação no eixo x, na qual as coordenadas são: (x,y,z) = (1,0,0). Para `x = 1`, alteramos o eixo x da matriz View para que houvesse a translação como solicidado no exercício.
+Neste exercício foi demandado realizar uma translação no eixo x, na qual as coordenadas são: (x,y,z) = (1,0,0). Para `x = 1`, alteramos o eixo x da matriz View abaixo para que houvesse a translação como solicidado no exercício.
 
 ```C
     float view_array[16] = {1.0f, 0.0f, 0.0f, 0.0f, 
@@ -36,7 +36,7 @@ Neste exercício foi demandado realizar uma translação no eixo x, na qual as c
 
 ### Resultado
 
-![](link) 
+![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-2.jpg?raw=true) 
 |:--:| 
 | *Figura 2: (x,y,z)=(1,0,0)* |
 ## Referências
