@@ -39,5 +39,24 @@ Neste exercício foi demandado realizar uma translação no eixo x, na qual as c
 ![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-2.jpg?raw=true) 
 |:--:| 
 | *Figura 2: (x,y,z)=(1,0,0)* |
+
+## Exercício 3: Projeção Perspectiva
+
+Para este exercício foi requisitado alterar a matriz projeção (proj_array) baseada na matriz cedida no anunciado. Com isso, para que obtivéssemos o resultado conforme o solicitado foi alterado o valor do `d`, no qual `d = 1`, e derivou-se a matriz projeção abaixo:  
+
+```C
+    float proj_array[16] = {1.0f, 0.0f, 0.0f, 0.0f, 
+                            0.0f, 1.0f, 0.0f, 0.0f, 
+                            0.0f, 0.0f, 1.0f,-1.0f/d, 
+                            0.0f, 0.0f,   d , 1.0f};
+
+    glm::mat4 proj_mat = glm::make_mat4(proj_array);
+```
+
+### Resultado
+
+![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-3.jpg?raw=true) 
+|:--:| 
+| *Figura 2: d = 0.5f* |
 ## Referências
 
