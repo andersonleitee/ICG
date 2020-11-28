@@ -19,7 +19,25 @@ Para esse exercício foi solicitado uma alteração na escala da imagem dos tri�
 
 ![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-1.jpg?raw=true) 
 |:--:| 
-| *Figura 1: ((x,y,z)=(1/3,3/2,1)) * |
+| *Figura 1: (x,y,z)=(1/3,3/2,1)* |
 
+## Exercício 2: Translação
+
+Neste exercício foi demandado realizar uma translação no eixo x, na qual as coordenadas são: (x,y,z) = (1,0,0). Para `x = 1`, alteramos o eixo x da matriz View para que houvesse a translação como solicidado no exercício.
+
+```C
+    float view_array[16] = {1.0f, 0.0f, 0.0f, 0.0f, 
+                            0.0f, 1.0f, 0.0f, 0.0f, 
+                            0.0f, 0.0f, 1.0f, 0.0f, 
+                              x , 0.0f, 0.0f, 1.0f};
+
+    glm::mat4 view_mat = glm::make_mat4(view_array);
+```
+
+### Resultado
+
+![](link) 
+|:--:| 
+| *Figura 2: (x,y,z)=(1,0,0)* |
 ## Referências
 
