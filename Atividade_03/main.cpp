@@ -15,6 +15,7 @@
 #define IMAGE_WIDTH 512 // Largura da janela OpenGL em pixels.
 #define IMAGE_HEIGHT 512 // Altura da janela OpenGL em pixels.
 
+float sx = 0.3f, sy = 1.5f, sz = 1.0f;
 
 // Array contendo ascoordenadas X,Y e Z de tres vertices (um trianglulo).
 float vertices[] = { -0.25f, -0.5f, -0.1f, 0.75f, 0.0f, 0.0f, // red triangle (closer)
@@ -66,11 +67,11 @@ void Display(void) {
 
     // Matriz Model ///////////////////////////////////////////////////////////
     // You will have to change the contents of this matrix for the exercises
-    float model_array[16] = {1.0f, 0.0f, 0.0f, 0.0f, 
-                             0.0f, 1.0f, 0.0f, 0.0f, 
-                             0.0f, 0.0f, 1.0f, 0.0f, 
-                             0.0f, 0.0f, 0.0f, 1.0f};
-    glm::mat4 model_mat = glm::make_mat4(model_array);
+  float model_array[16] = { sx , 0.0f, 0.0f, 0.0f, 
+                           0.0f,  sy , 0.0f, 0.0f, 
+                           0.0f, 0.0f,  sz , 0.0f, 
+                           0.0f, 0.0f, 0.0f, 1.0f};
+    glm::mat4 model_mat = glm::make_mat4(model_array); 
 
     // Matriz View ////////////////////////////////////////////////////////////
     // You will have to change the contents of this matrix for the exercises
