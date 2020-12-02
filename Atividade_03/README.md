@@ -23,7 +23,7 @@ Para esse exercício foi solicitado uma alteração na escala da imagem dos tri�
 
 ## Exercício 2: Translação
 
-Neste exercício foi demandado realizar uma translação no eixo x, na qual as coordenadas são: (x,y,z) = (1,0,0). Para `x = 1`, alteramos o eixo x da matriz View abaixo para que houvesse a translação como solicidado no exercício.
+Neste exercício foi demandado realizar uma translação no eixo x, na qual as coordenadas são: (x,y,z) = (1,0,0). Para `x = 1.0f`, alteramos o eixo x da matriz View abaixo para que houvesse a translação como solicidado no exercício.
 
 ```C
     float view_array[16] = {1.0f, 0.0f, 0.0f, 0.0f, 
@@ -57,6 +57,59 @@ Para este exercício foi requisitado alterar a matriz projeção (proj_array) ba
 
 ![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-3.jpg?raw=true) 
 |:--:| 
-| *Figura 2: d = 0.5f* |
+| *Figura 3: d = 0.5f* |
+
+
+## Exercício 4:: Posição da Câmera
+
+Esse exercício solicita inicialmente que seja calculado os vetores do espaço da câmera ultilizando as seguintes informações: `Posição da câmera = (−1/10, 1/10,1/4), vetor Up da câmera = (0,1,0), ponto para o qual a câmera está apontando = (0,0,0)`. Além disso, como é necessário conhecer o vetor direção, para calculá-lo basta subtrair a posição da câmera com o ponto para onde a câmera aponta (look at). 
+
+```C
+
+    //Informações
+    glm::vec3 cam_pos = glm::vec3(-1.0/10.0, 1.0/10.0, 1.0/4.0);//posição da câmera.
+    glm::vec3 cam_look_at = glm::vec3(0.0, 0.0, 0.0);//ponto para onde a câmera aponta.
+    glm::vec3 cam_up = glm::vec3(0.0, 1.0, 0.0);//Vetor Up
+    glm::vec3 D = cam_pos - cam_look_at; //Vetor direção
+
+    //Vetores da base do espaço câmera
+    glm::vec3 Zcam = glm::normalize(D);
+    glm::vec3 Xcam = glm::normalize(glm::cross(glm::normalize(cam_up), Zcam));
+    glm::vec3 Ycam = glm::cross(Zcam, Xcam);
+
+```
+
+Em seguida, implementamos a matriz transposta da base da câmera `B^t` e a matriz de translação `T`
+
+```C
+   //Matriz transposta da base da câmera, B^t
+     float Bt_array[16] = {Xcam.x, Ycam.x, Zcam.x, 0.0f,
+                          Xcam.y, Ycam.y, Zcam.y, 0.0f,
+                          Xcam.z, Ycam.z, Zcam.z, 0.0f,
+                          0.0f  , 0.0f  , 0.0f  , 1.0f};
+
+    glm::mat4 Bt_mat = glm::make_mat4(Bt_array);
+
+    //Matriz de translação, T
+     float T_array[16] = {1.0f, 0.0f, 0.0f, 0.0f,
+                          0.0f, 1.0f, 0.0f, 0.0f,
+                          0.0f, 0.0f, 1.0f, 0.0f,
+                         -cam_pos.x, -cam_pos.y, -cam_pos.z, 1.0f};
+
+    glm::mat4 T_mat = glm::make_mat4(T_array);
+```
+Logo após, implementamos a matriz View como o produto das matrizes `B^t` e `T`.
+
+```C
+    //Matriz View como o produto das matrizes B^t e T
+
+    glm::mat4 view_mat = Bt_mat * T_mat;
+
+```
+### Resultado
+
+![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-4.jpg?raw=true) 
+|:--:| 
+| *Figura 4: Posição da câmera = (−1/10, 1/10,1/4), vetor Up da câmera = (0,1,0), ponto para o qual a câmera está apontando = (0,0,0)* |
 ## Referências
 
