@@ -17,7 +17,7 @@ Para esse exercício foi solicitado uma alteração na escala da imagem dos tri�
 
 ### Resultado
 
-![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-1.jpg?raw=true) 
+![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-1.png?raw=true) 
 |:--:| 
 | *Figura 1: (x,y,z)=(1/3,3/2,1)* |
 
@@ -36,7 +36,7 @@ Neste exercício foi demandado realizar uma translação no eixo x, na qual as c
 
 ### Resultado
 
-![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-2.jpg?raw=true) 
+![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-2.png?raw=true) 
 |:--:| 
 | *Figura 2: (x,y,z)=(1,0,0)* |
 
@@ -55,7 +55,7 @@ Para este exercício foi requisitado alterar a matriz projeção (proj_array) ba
 
 ### Resultado
 
-![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-3.jpg?raw=true) 
+![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-3.png?raw=true) 
 |:--:| 
 | *Figura 3: d = 0.5f* |
 
