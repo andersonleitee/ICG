@@ -15,14 +15,16 @@
 #define IMAGE_WIDTH 512 // Largura da janela OpenGL em pixels.
 #define IMAGE_HEIGHT 512 // Altura da janela OpenGL em pixels.
 
+float d = 0.5f;
 
-// Array contendo ascoordenadas X,Y e Z de tres vertices (um trianglulo).
-float vertices[] = { -0.25f, -0.5f, -0.1f, 0.75f, 0.0f, 0.0f, // red triangle (closer)
+// Array contendo as coordenadas X,Y e Z de tres vertices (um trianglulo).
+float vertices[] = {-0.25f, -0.5f, -0.1f, 0.75f, 0.0f, 0.0f, // red triangle (closer)
                      0.25f,  0.5f, -0.1f, 0.75f, 0.0f, 0.0f,
                      0.75f, -0.5f, -0.1f, 0.75f, 0.0f, 0.0f,
                     -0.75f, -0.5f, -0.4f, 0.0f, 0.0f, 0.75f, // blue triangle (farther)
                     -0.25f,  0.5f, -0.4f, 0.0f, 0.0f, 0.75f,
                      0.25f, -0.5f, -0.4f, 0.0f, 0.0f, 0.75f}; 
+
 char* frag_shader_source = NULL;
 char* vertex_shader_source = NULL;
 unsigned int shader_program;
@@ -85,8 +87,8 @@ void Display(void) {
     // You will have to change the contents of this matrix for the exercises
     float proj_array[16] = {1.0f, 0.0f, 0.0f, 0.0f, 
                             0.0f, 1.0f, 0.0f, 0.0f, 
-                            0.0f, 0.0f, 1.0f, 0.0f, 
-                            0.0f, 0.0f, 0.0f, 1.0f};
+                            0.0f, 0.0f, 1.0f,-1.0f/d, 
+                            0.0f, 0.0f,   d , 1.0f};
 
     glm::mat4 proj_mat = glm::make_mat4(proj_array);
 
@@ -116,6 +118,7 @@ void Display(void) {
     glutPostRedisplay();  //
 }
 
+//********************************************************************************************************************
 void ExitProg(void) {
     if (vertex_shader_source) {
         free(vertex_shader_source);
@@ -132,7 +135,6 @@ void ExitProg(void) {
 
 //********************************************************************************************************************
 int main(int argc, char** argv) {
-
     // Inicializa a GLUT
     glutInit(&argc, argv);
 
