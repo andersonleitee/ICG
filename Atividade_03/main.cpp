@@ -15,7 +15,7 @@
 #define IMAGE_WIDTH 512 // Largura da janela OpenGL em pixels.
 #define IMAGE_HEIGHT 512 // Altura da janela OpenGL em pixels.
 
-float d = 0.5f;
+float d = 0.125f;
 
 // Array contendo as coordenadas X,Y e Z de tres vertices (um trianglulo).
 float vertices[] = {-0.25f, -0.5f, -0.1f, 0.75f, 0.0f, 0.0f, // red triangle (closer)
