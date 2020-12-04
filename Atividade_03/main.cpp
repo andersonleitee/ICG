@@ -15,7 +15,7 @@
 #define IMAGE_WIDTH 512 // Largura da janela OpenGL em pixels.
 #define IMAGE_HEIGHT 512 // Altura da janela OpenGL em pixels.
 
-float d = 0.5f;
+float d = 0.125f;
 
 // Array contendo as coordenadas X,Y e Z de tres vertices (um trianglulo).
 float vertices[] = {-0.25f, -0.5f, -0.1f, 0.75f, 0.0f, 0.0f, // red triangle (closer)
@@ -78,8 +78,8 @@ void Display(void) {
     // You will have to change the contents of this matrix for the exercises
 
     //Informações
-    glm::vec3 cam_pos = glm::vec3(-1.0/10.0, 1.0/10.0, 1.0/4.0);//posição da câmera.
-    glm::vec3 cam_look_at = glm::vec3(0.0, 0.0, 0.0);//ponto para onde a câmera aponta.
+    glm::vec3 cam_pos = glm::vec3(-1.0/10.0, 1.0/10.0, 1.0/10.0);//posição da câmera.
+    glm::vec3 cam_look_at = glm::vec3(0.0, 0.0, -1.0);//ponto para onde a câmera aponta.
     glm::vec3 cam_up = glm::vec3(0.0, 1.0, 0.0);//Vetor Up
     glm::vec3 D = cam_pos - cam_look_at; //Vetor direção
 
@@ -87,10 +87,9 @@ void Display(void) {
     glm::vec3 Zcam = glm::normalize(D);
     glm::vec3 Xcam = glm::normalize(glm::cross(glm::normalize(cam_up), Zcam));
     glm::vec3 Ycam = glm::cross(Zcam, Xcam);
-
+  
     //Matriz transposta da base da câmera, B^t
-
-    float Bt_array[16] = {Xcam.x, Ycam.x, Zcam.x, 0.0f,
+     float Bt_array[16] = {Xcam.x, Ycam.x, Zcam.x, 0.0f,
                           Xcam.y, Ycam.y, Zcam.y, 0.0f,
                           Xcam.z, Ycam.z, Zcam.z, 0.0f,
                           0.0f  , 0.0f  , 0.0f  , 1.0f};
@@ -98,14 +97,14 @@ void Display(void) {
     glm::mat4 Bt_mat = glm::make_mat4(Bt_array);
 
     //Matriz de translação, T
-    float T_array[16] = {1.0f, 0.0f, 0.0f, 0.0f,
-                         0.0f, 1.0f, 0.0f, 0.0f,
-                         0.0f, 0.0f, 1.0f, 0.0f,
-                        -cam_pos.x, -cam_pos.y, -cam_pos.z, 1.0f};
+     float T_array[16] = {1.0f, 0.0f, 0.0f, 0.0f,
+                          0.0f, 1.0f, 0.0f, 0.0f,
+                          0.0f, 0.0f, 1.0f, 0.0f,
+                         -cam_pos.x, -cam_pos.y, -cam_pos.z, 1.0f};
 
     glm::mat4 T_mat = glm::make_mat4(T_array);
 
-    //Matriz View como o produto das matrizes B^t e T
+        //Matriz View como o produto das matrizes B^t e T
 
     glm::mat4 view_mat = Bt_mat * T_mat;
 
