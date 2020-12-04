@@ -110,6 +110,6 @@ Logo após, implementamos a matriz View como o produto das matrizes `B^t` e `T`.
 
 ![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-4.png?raw=true) 
 |:--:| 
-| *Figura 4: Posição da câmera = (−1/10, 1/10,1/4), vetor Up da câmera = (0,1,0), ponto para o qual a câmera está apontando = (0,0,0)* |
+| *Figura 4: Posição da câmera = (−1/10, 1/10,1/10), vetor Up da câmera = (0,1,0), ponto para o qual a câmera está apontando = (0,0,-1)* |
 ## Referências
 
