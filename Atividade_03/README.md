@@ -42,7 +42,7 @@ Neste exercício foi demandado realizar uma translação no eixo x, na qual as c
 
 ## Exercício 3: Projeção Perspectiva
 
-Para este exercício foi requisitado alterar a matriz projeção (proj_array) baseada na matriz cedida no anunciado. Com isso, para que obtivéssemos o resultado conforme o solicitado foi alterado o valor do `d`, no qual `d = 0.5f`, e derivou-se a matriz projeção abaixo:  
+Para este exercício foi requisitado alterar a matriz projeção (proj_array) baseada na matriz cedida no anunciado. Com isso, para que obtivéssemos o resultado conforme o solicitado foi alterado o valor do `d`, no qual `d = 0.125f`, e derivou-se a matriz projeção abaixo:  
 
 ```C
     float proj_array[16] = {1.0f, 0.0f, 0.0f, 0.0f, 
@@ -62,13 +62,13 @@ Para este exercício foi requisitado alterar a matriz projeção (proj_array) ba
 
 ## Exercício 4:: Posição da Câmera
 
-Esse exercício solicita inicialmente que seja calculado os vetores do espaço da câmera ultilizando as seguintes informações: `Posição da câmera = (−1/10, 1/10,1/4), vetor Up da câmera = (0,1,0), ponto para o qual a câmera está apontando = (0,0,0)`. Além disso, como é necessário conhecer o vetor direção, para calculá-lo basta subtrair a posição da câmera com o ponto para onde a câmera aponta (look at). 
+Esse exercício solicita inicialmente que seja calculado os vetores do espaço da câmera ultilizando as seguintes informações: `Posição da câmera = (−1/10, 1/10,1/10), vetor Up da câmera = (0,1,0), ponto para o qual a câmera está apontando = (0,0,-1)`. Além disso, como é necessário conhecer o vetor direção, para calculá-lo basta subtrair a posição da câmera com o ponto para onde a câmera aponta (look at). 
 
 ```C
 
     //Informações
-    glm::vec3 cam_pos = glm::vec3(-1.0/10.0, 1.0/10.0, 1.0/4.0);//posição da câmera.
-    glm::vec3 cam_look_at = glm::vec3(0.0, 0.0, 0.0);//ponto para onde a câmera aponta.
+    glm::vec3 cam_pos = glm::vec3(-1.0/10.0, 1.0/10.0, 1.0/10.0);//posição da câmera.
+    glm::vec3 cam_look_at = glm::vec3(0.0, 0.0, -1.0);//ponto para onde a câmera aponta.
     glm::vec3 cam_up = glm::vec3(0.0, 1.0, 0.0);//Vetor Up
     glm::vec3 D = cam_pos - cam_look_at; //Vetor direção
 
@@ -110,6 +110,6 @@ Logo após, implementamos a matriz View como o produto das matrizes `B^t` e `T`.
 
 ![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-4.png?raw=true) 
 |:--:| 
-| *Figura 4: Posição da câmera = (−1/10, 1/10,1/4), vetor Up da câmera = (0,1,0), ponto para o qual a câmera está apontando = (0,0,0)* |
+| *Figura 4: Posição da câmera = (−1/10, 1/10,1/10), vetor Up da câmera = (0,1,0), ponto para o qual a câmera está apontando = (0,0,-1)* |
 ## Referências
 
