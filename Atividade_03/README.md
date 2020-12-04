@@ -57,7 +57,7 @@ Para este exercício foi requisitado alterar a matriz projeção (proj_array) ba
 
 ![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-3.png?raw=true) 
 |:--:| 
-| *Figura 3: d = 0.5f* |
+| *Figura 3: d = 0.125f* |
 
 
 ## Exercício 4: Posição da Câmera
