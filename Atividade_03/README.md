@@ -42,13 +42,13 @@ Neste exercício foi demandado realizar uma translação no eixo x, na qual as c
 
 ## Exercício 3: Projeção Perspectiva
 
-Para este exercício foi requisitado alterar a matriz projeção (proj_array) baseada na matriz cedida no anunciado. Com isso, para que obtivéssemos o resultado conforme o solicitado foi alterado o valor do `d`, no qual `d = 0.5f`, e derivou-se a matriz projeção abaixo:  
+Para este exercício foi requisitado alterar a matriz projeção (proj_array) baseada na matriz cedida no anunciado. Com isso, para que obtivéssemos o resultado conforme o solicitado foi alterado o valor do `d`, no qual `d = 0.125f`, e derivou-se a matriz projeção abaixo:  
 
 ```C
     float proj_array[16] = {1.0f, 0.0f, 0.0f, 0.0f, 
                             0.0f, 1.0f, 0.0f, 0.0f, 
                             0.0f, 0.0f, 1.0f,-1.0f/d, 
-                            0.0f, 0.0f,   d , 1.0f};
+                            0.0f, 0.0f,   d , 0.0f};
 
     glm::mat4 proj_mat = glm::make_mat4(proj_array);
 ```
@@ -57,18 +57,18 @@ Para este exercício foi requisitado alterar a matriz projeção (proj_array) ba
 
 ![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-3.png?raw=true) 
 |:--:| 
-| *Figura 3: d = 0.5f* |
+| *Figura 3: d = 0.125f* |
 
 
-## Exercício 4:: Posição da Câmera
+## Exercício 4: Posição da Câmera
 
-Esse exercício solicita inicialmente que seja calculado os vetores do espaço da câmera ultilizando as seguintes informações: `Posição da câmera = (−1/10, 1/10,1/4), vetor Up da câmera = (0,1,0), ponto para o qual a câmera está apontando = (0,0,0)`. Além disso, como é necessário conhecer o vetor direção, para calculá-lo basta subtrair a posição da câmera com o ponto para onde a câmera aponta (look at). 
+Esse exercício solicita inicialmente que seja calculado os vetores do espaço da câmera ultilizando as seguintes informações: `Posição da câmera = (−1/10, 1/10,1/10), vetor Up da câmera = (0,1,0), ponto para o qual a câmera está apontando = (0,0,-1)`. Além disso, como é necessário conhecer o vetor direção, para calculá-lo basta subtrair a posição da câmera com o ponto para onde a câmera aponta (look at). 
 
 ```C
 
     //Informações
-    glm::vec3 cam_pos = glm::vec3(-1.0/10.0, 1.0/10.0, 1.0/4.0);//posição da câmera.
-    glm::vec3 cam_look_at = glm::vec3(0.0, 0.0, 0.0);//ponto para onde a câmera aponta.
+    glm::vec3 cam_pos = glm::vec3(-1.0/10.0, 1.0/10.0, 1.0/10.0);//posição da câmera.
+    glm::vec3 cam_look_at = glm::vec3(0.0, 0.0, -1.0);//ponto para onde a câmera aponta.
     glm::vec3 cam_up = glm::vec3(0.0, 1.0, 0.0);//Vetor Up
     glm::vec3 D = cam_pos - cam_look_at; //Vetor direção
 
@@ -110,6 +110,66 @@ Logo após, implementamos a matriz View como o produto das matrizes `B^t` e `T`.
 
 ![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-4.png?raw=true) 
 |:--:| 
-| *Figura 4: Posição da câmera = (−1/10, 1/10,1/4), vetor Up da câmera = (0,1,0), ponto para o qual a câmera está apontando = (0,0,0)* |
-## Referências
+| *Figura 4: Posição da câmera = (−1/10, 1/10,1/10), vetor Up da câmera = (0,1,0), ponto para o qual a câmera está apontando = (0,0,-1)* |
+
+## Exercício 5: Transformações Livres
+
+Neste exercício, como o intuito seria a realização de transformações geométricas livres, optamos por mudar a forma da imagem para um quadrado. Com isso, atualizamos os vértices para os seguintes valores:
+
+
+```C
+float vertices[] = {-0.5f,  0.5f, -0.4f, 1.0f, 0.0f, 0.0f,
+                     0.5f,  0.5f, -0.4f, 0.0f, 1.0f, 0.0f,
+                     0.5f, -0.5f, -0.4f, 0.0f, 0.0f, 1.0f,
+                    -0.5f, -0.5f, -0.4f, 1.0f, 1.0f, 1.0f,
+                    -0.5f,  0.5f, -0.4f, 1.0f, 0.0f, 0.0f,
+                     0.5f, -0.5f, -0.4f, 0.0f, 0.0f, 1.0f};
+
+```
+
+### Resultado
+
+![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-5-quadrado.png?raw=true) 
+|:--:| 
+| *Figura 5: Quadrado gerado com alteração dos vértices* |
+
+
+Em seguida, realizamos a primeira modificação na matriz model com os valores `sx = 1.0f, sy = 1.5f, sz = 1.0f`
+
+### Resultado
+
+![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-5-matriz-model.png?raw=true) 
+|:--:| 
+| *Figura 6: Alteração na matriz model* |
+
+A segunda alteração foi na matriz porjection, onde atualizamos o parâmetro `d` para `d = 0.250`.
+
+### Resultado
+
+![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-5-matriz-projection.png?raw=true) 
+|:--:| 
+| *Figura 7: Alteração na matriz projection* |
+
+Por fim, alteramos a matriz view, na qual substituimos as seguintes informações: `Posição da câmera = (-1/20, 1/20, 1/10), vetor Up da câmera = (0, 1, 0), ponto para o qual a câmera está apontando = (0, 0, 0)`.
+```C
+   //Informações
+    glm::vec3 cam_pos = glm::vec3(-1.0/20.0, 1.0/20.0, 1.0/10.0);//posição da câmera.
+    glm::vec3 cam_look_at = glm::vec3(0.0, 0.0, 0.0);//ponto para onde a câmera aponta.
+    glm::vec3 cam_up = glm::vec3(0.0, 1.0, 0.0);//Vetor Up
+    glm::vec3 D = cam_pos - cam_look_at; //Vetor direção
+```
+### Resultado
+
+![](https://github.com/andersonleitee/ICG/blob/master/Atividade_03/prints/Exercicio-5-matriz-view.png?raw=true) 
+|:--:| 
+| *Figura 8: Alteração na matriz view* |
+
+
+## Observação:
+O código referente aos exercício estão dispostos nas branchs criadas para solucionar a atividade. Os nomes dos ramos seguem o seguinte padrão: `Atvd_3/Exercicio-n` onde n é um inteiro de 1 à 5, que representa a numeração de cada exercício. 
+
+## Referências:
+- Com base nas video aulas de pipeline gtáfico do professor Christian Azambuja e <a href="https://github.com/capagot/icg/tree/master/03_transformations"> repositório</a> disponibilizado;
+- <a href="https://sigaa.ufpb.br/sigaa/portais/discente/beta/discente.jsf#"> Geometric Transformations </a>
+- <a href="http://matheuspraxedescg.blogspot.com/"> Blog Matheus Praxedes</a>
 
