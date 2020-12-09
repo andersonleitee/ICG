@@ -48,7 +48,7 @@ Para este exercício foi requisitado alterar a matriz projeção (proj_array) ba
     float proj_array[16] = {1.0f, 0.0f, 0.0f, 0.0f, 
                             0.0f, 1.0f, 0.0f, 0.0f, 
                             0.0f, 0.0f, 1.0f,-1.0f/d, 
-                            0.0f, 0.0f,   d , 1.0f};
+                            0.0f, 0.0f,   d , 0.0f};
 
     glm::mat4 proj_mat = glm::make_mat4(proj_array);
 ```
